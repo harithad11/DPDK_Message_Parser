@@ -1,0 +1,24 @@
+you can set up a Linux-like environment using Windows Subsystem for Linux (WSL). WSL allows you to run a full Linux distribution on Windows, which is especially useful for developing and testing DPDK
+
+
+STEP 1:
+Install Windows Subsystem for Linux (WSL):
+    wsl --install
+Open Ubuntu: Once WSL is installed, search for "Ubuntu" in your Start Menu, launch it, and complete the initial setup (username and password creation).
+
+STEP 2:
+Update Package Lists:
+    sudo apt update
+Install Build Essentials and Required Tools:
+    sudo apt install -y build-essential meson ninja-build libnuma-dev git
+
+STEP 3:
+Clone the DPDK Repository:
+    git clone https://github.com/DPDK/dpdk.git
+    cd dpdk
+
+Configure the Build with Meson:
+    meson setup build
+
+Compile DPDK:
+    ninja -C build
